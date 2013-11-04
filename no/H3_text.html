@@ -1,0 +1,54 @@
+<body  onmousedown = "return false;" >
+<link rel="StyleSheet"  href="../styles/cinderella.css" type="text/css" />
+
+<p> 
+Fiskesvermen som er simulert i programvinduet til h&oslash;yre, ser komplisert ut. Den styres imidlertid  
+av sv&aelig;rt enkle regler. Hver fisk gjenkjenner fisker som n&aelig;rmer seg, som naboer.
+Den ansl&aring;r plassering og gjennomsnitt hastigheten til disse naboene.
+P&aring; grunnlag av anslaget justerer den sin egen hastighet, ved &aring; anvende f&oslash;lgende regler:
+<!--
+
+The amazingly complex looking swarm simulation on the right is created by 
+very simple rules. Each fish recognizes other fish close to him as neighbors.
+ Then it estimates the average position and average speed of these neighbors
+ and adjusts its speed by applying the following rules:
+ -->
+ 
+<table>
+<tr height=10><td></td><tr>
+<tr><td width=20>&nbsp;&#8226;</td><td>
+<font size=5><!--Avoid other fish and obstacles. -->Unng&aring; fisker og andre hindringer</font>
+</td></tr>
+<tr height=10><td></td><tr>
+<tr><td>&#8226;</td><td>
+<font size=5><!--Swim towards the position where your  -->Sv&oslash;m mot naboene dine</font>
+</td></tr>
+<tr><td></td><td>
+<font size=5> <!--neighbors are. -->
+</font>
+</td></tr>
+<tr height=10><td></td><tr>
+<tr><td>&#8226;</td><td>
+<font size=5><!--Swim in the same direction-->Sv&oslash;m i samme retning</font>
+</td></tr>
+<tr><td></td><td>
+<font size=5><!--as your neighbors.-->
+som naboene dine</font>
+</td></tr>
+<tr height=10><td></td><tr>
+<tr><td>&#8226;</td><td>
+<font size=5><!--Except for that just continue swimming.-->Med unntak av disse reglene, sv&oslash;m som normalt</font>
+</td></tr>
+<tr height=10><td></td><tr>
+</table>
+
+
+Ved &aring; bruke glidebryterne kan du justere hvor mye de ulike reglene p&aring;virker
+hastigheten og retningen til fiskene. Man kan ogs&aring; justere antall naboer som en fisk kan se.
+<!--
+Using the sliders you can adjust how much the different rules influence
+ speed and direction of a fish. One can also adjust the number of neighbors seen by a fish.
+ -->
+</p> 
+</body>
+

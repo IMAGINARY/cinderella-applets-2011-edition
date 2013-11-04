@@ -1,0 +1,510 @@
+siz=|H,M|/|H,G|*4;
+pen=|L,N|/|L,K|;
+blur=|O,U|/|O,P|;
+sat=|R,V|/|R,Q|;
+black=|T,W|/|T,S|;alp=1;
+D.visible=showgeom;
+E.visible=showgeom;
+F.visible=showgeom;
+r1.visible=showgeom;
+r2.visible=showgeom;
+r3.visible=showgeom;
+r4.visible=showgeom;parse(fundam);if(D.selected % E.selected % F.selected,
+   parse(group);
+   cell=(D.xy,E.xy,F.xy);
+   mi=min([cell_1,cell_2,cell_3,cell_2+cell_3-cell_1]); 
+   ma=max([cell_1,cell_2,cell_3,cell_2+cell_3-cell_1]); 
+   celldiff=mi-cell_1;    createimage("kachel",res*(ma.x-mi.x),res*(ma.y-mi.y));//   reconstruct(););stamp=seconds();
+   drawing();//drawtext((22,1),seconds()-stamp,color->(1,1,1));//drawtext((26,1),length(stroke),color->(1,1,1));
+if(drawing,  sto=st;  mouseupaction();
+  st=sto;
+);//apply(intpts,draw(#+D););
+ncols=10;
+cols=apply(0..ncols,hue(#/ncols));
+res=screenresolution();
+createimage("main",res*|A,B|,res*|A,C|);
+createimage("undopic",res*|A,B|,res*|A,C|);
+stroke=[];
+cell=(D.xy,E.xy,F.xy);bas=transpose([cell_2-cell_1,cell_3-cell_1]);id=[[1,0,0],[0,1,0],[0,0,1]];initcell:=(
+  cell=(D.xy,E.xy,F.xy);
+  bas=transpose([cell_2-cell_1,cell_3-cell_1]);  a=cell_1;
+  b=cell_2;
+  d=cell_3;
+  c=b+d-a;
+  mi=min([cell_1,cell_2,cell_3,cell_2+cell_3-cell_1]); 
+  ma=max([cell_1,cell_2,cell_3,cell_2+cell_3-cell_1]); 
+);
+calcintpts():=(
+  initcell;
+  intpts=[];
+  dx=ma.x-mi.x;
+  dy=ma.y-mi.y;  nx=20;
+  ny=20;  forall(-nx..nx,i,
+      forall(-ny..ny,j,
+        trans=bas*(i,j)+D; 
+          if(trans.x>A.x-dx&trans.x<B.x+dx&trans.y>A.y-dy&trans.y<C.y+dy,
+            intpts=intpts++[trans-D];
+       )
+    );
+  )
+);calcintpts();
+turn=((0,1),(-1,0));
+force=false;
+norestriction:=(
+    if(mover()==D,E.xy=D+b-a;F.xy=D+d-a;);  
+    inticell;   
+);
+rechteck:=(
+    if(or(mover()==F , force),E.xy=D-turn*(F-D)/|F-D|*|E-D|);
+    if(mover()==E,F.xy=D+turn*(E-D)/|E-D|*|F-D|);
+    if(mover()==D,E.xy=D+b-a;F.xy=D+d-a;);  
+    inticell;   
+);
+raute:=(
+    if(or(mover()==F , force),E.xy=D+(E-D)/|E-D|*|F-D|);
+    if(mover()==E,F.xy=D+(F-D)/|F-D|*|E-D|);
+    if(mover()==D,E.xy=D+b-a;F.xy=D+d-a;);  
+    inticell;   
+);quadrat:=(    if(or(mover()==F , force),E.xy=D+gauss(complex(F-D)*i));
+    if(mover()==E,F.xy=D+gauss(-complex(E-D)*i));
+    if(mover()==D,E.xy=D+b-a;F.xy=D+d-a;);  
+    inticell;   
+);raute60:=(
+    if(or(mover()==F , force),E.xy=D+gauss(complex(F-D)*exp(60°*i)));
+    if(mover()==E,F.xy=D+gauss(complex(E-D)*exp(-60°*i)));
+    if(mover()==D,E.xy=D+b-a;F.xy=D+d-a;);  
+    inticell;   
+);
+p1:=(
+  fundam="norestriction";
+  initcell;
+  mats=[id];
+);p2:=(
+  fundam="norestriction";
+  initcell;
+  mats=[id,map(a,b,c,d)];
+);pg:=(
+  fundam="rechteck";
+  initcell;
+  mats=[id, map(a,b,d,(c+d)/2,c+(b-a)/2,(a+b)/2)];
+);pgg:=(
+  fundam="rechteck";
+  initcell;
+  mats=[id, map(a,b,d,(c+d)/2,c+(b-a)/2,(a+b)/2)];
+);pm:=(
+  fundam="rechteck";
+  initcell;
+  mats=[id, map(a,b,c,d,c,b)];
+);
+pmg:=(
+  fundam="rechteck";
+  initcell;
+  mats=[id, map(a,b,c,d,c,b),map(a,b,(b+c)/2,(a+d)/2),map(a,b,c,d,c,b)*map(a,b,(b+c)/2,(a+d)/2)];
+);pmm:=(
+  fundam="rechteck";
+  initcell;
+  mats=[id, map(a,b,c,d,c,b),map(a,b,c,b,a,d),map(a,b,c,d)];
+);pgg:=(
+  fundam="rechteck";
+  initcell;
+  mats=[id,map(a,(a+b)/2,(a+d)/2,(a+c)/2,(a+d)/2,(c+d)/2),map(a,(a+b)/2,(a+d)/2,(a+c)/2,(a+d)/2,(c+d)/2)*map(a,b,c,d),map(a,b,c,d)];
+);
+cm:=(
+  fundam="raute";
+  initcell;
+  mats=[id, map(a,b,c,a,d,c)];
+);
+cmm:=(
+  fundam="raute";
+  initcell;
+  mats=[id, map(a,b,c,a,d,c),map(a,b,c,c,b,a),map(a,b,c,d)];
+);p4:=(
+  fundam="quadrat";
+  initcell;
+  mats=[id, map(a,b,b,c),map(a,b,c,d),map(a,b,d,a)];
+);p4m:=(
+  fundam="quadrat";
+  initcell;
+  mir=map(a,b,c,a,d,c);
+  mats=[id, map(a,b,b,c),map(a,b,c,d),map(a,b,d,a),
+        mir, mir*map(a,b,b,c),mir*map(a,b,c,d),mir*map(a,b,d,a)];);
+p4g:=(
+  fundam="quadrat";
+  initcell;
+  rot=map((a+d)/2,a,(a+d)/2,(a+b+c+d)/4);
+  mats=[id, map(a,c,b,a,c,d),map(b,d,a,b,d,c),map(a,b,c,c,d,a),
+        rot, rot*map(a,c,b,a,c,d),rot*map(b,d,a,b,d,c),rot*map(a,b,c,c,d,a)];);p3:=(
+  fundam:="raute60";
+  initcell;
+  mats=[id, map(a,b,b,d),map(a,b,d,a)];
+);p3m1:=(
+  fundam:="raute60";
+  initcell;
+  mir=map(a,b,c,a,d,c);
+  mats=[id, map(a,b,b,d),map(a,b,d,a),
+        mir, mir*map(a,b,b,d),mir*map(a,b,d,a)];
+);p31m:=(
+  fundam:="raute60";
+  initcell;
+  mir=map(a,b,c,c,b,a);
+  mats=[id, map(a,b,b,d),map(a,b,d,a),
+        mir, mir*map(a,b,b,d),mir*map(a,b,d,a)];
+);p6:=(
+  fundam:="raute60";
+  initcell;
+  rot=map(a,b,a,d);
+  mats=[id, rot,rot*rot,rot*rot*rot,rot*rot*rot*rot,rot*rot*rot*rot*rot];
+);p6m:=(
+  fundam:="raute60";
+  initcell;
+  mir=map(a,b,c,a,d,c);
+  rot=map(a,b,a,d);
+  mats=[id, rot,rot*rot,rot*rot*rot,rot*rot*rot*rot,rot*rot*rot*rot*rot,
+        mir, mir*rot,mir*rot*rot,mir*rot*rot*rot,mir*rot*rot*rot*rot,mir*rot*rot*rot*rot*rot
+       ];
+);group:="p4g";parse(group);
+initcell;
+calcintpts();
+ createimage("img",res*|A,B|,res*|A,C|);
+err(res*|A,C|);blob(mid,rad,col):=(
+  fillcircle(mid,rad*1.2,color->col,alpha->0.43);
+  fillcircle(mid,rad,color->col,alpha->0.43);
+  fillcircle(mid,rad*.9,color->col,alpha->0.43);
+);
+drawui():=(
+ blob(H+(0,-.7),.1,col(sat,black,colselect_1));
+ blob(G+(0,.7),.3,col(sat,black,colselect_1)); apply(pentable,entry,
+   drawimage(entry_2,entry_1,scale->entry_3,alpha->0.7)
+ ); apply(function,entry,
+   drawimage(entry_2,entry_1,scale->entry_3)
+ );
+ apply(grouptable,entry,
+   drawimage(entry_2,entry_1,scale->0.6,alpha->0.5)
+ );   drawimage(groupsel_2,groupsel_1,scale->0.6,alpha->0.9);
+dd=.8;
+ drawpolygon((groupsel_2+(dd,dd),
+              groupsel_2+(-dd,dd),
+              groupsel_2+(-dd,-dd),
+              groupsel_2+(dd,-dd)),color->(1,1,1)*.7);
+ apply(colortable,entry,
+   apply(1..6,al,
+     fillcircle(entry_2,.8-.051*al,color->col(sat,black,entry_1),alpha->.5)
+   );
+ );
+  
+ drawcircle(colselect_2,1,color->(1,1,1),alpha->.4,size->2);preview((25,2),siz););
+drawing():=(
+ bas=transpose([cell_2-cell_1,cell_3-cell_1]);
+ clrscr();
+ drawui(); drawimage(A,B,C,"main");
+ clearimage("img");
+ clearimage("kachel");
+ mi=min([cell_1,cell_2,cell_3,cell_2+cell_3-cell_1]); 
+ ma=max([cell_1,cell_2,cell_3,cell_2+cell_3-cell_1]); 
+ celldiff=mi-cell_1; 
+      canvas(mi,(ma.x,mi.y),"kachel", 
+//        mid=(a+b+c+d)/4; 
+  //      clip((a-mid,b-mid,c-mid,d-mid)*1.05+(mid,mid,mid,mid));
+        forall(stroke,strorig,//err(strorig);
+    forall(mats,m,              pen(((m*(strorig_1++[1])).xy,(m*(strorig_2++[1])).xy),1*siz);
+           );
+        );
+//greset();
+      );
+    canvas(A,B,C,"img",
+       forall(intpts,trans,
+              drawimage(mi+trans,(ma.x,mi.y)+trans,"kachel");
+        );
+    );      dr=0;
+      ds=0;
+      drawimage(A+(dr,ds),B+(dr,ds),C+(dr,ds),"img",alpha->alp););
+reconstruct():=(
+ clearimage("img");
+ clearimage("main"); mi=min([cell_1,cell_2,cell_3,cell_2+cell_3-cell_1]); 
+ ma=max([cell_1,cell_2,cell_3,cell_2+cell_3-cell_1]); 
+ celldiff=mi-cell_1;  createimage("kachel",res*(ma.x-mi.x),res*(ma.y-mi.y));count=0;clrscr();
+forall(strokelist,strokedata,
+count=count+1;
+ clearimage("img");
+//err(strokedata);
+ stroke=strokedata_1;
+ sat=strokedata_2_1;
+ black=strokedata_2_2;
+ colselect=strokedata_2_3;
+ siz=strokedata_2_4;
+ blur=strokedata_2_5;
+ pen=strokedata_2_6;
+ clearimage("kachel");
+    forall(mats,m,
+  forall(stroke,strorig,
+        canvas(mi,(ma.x,mi.y),"kachel", 
+              pen(((m*(strorig_1++[1])).xy,(m*(strorig_2++[1])).xy),1*siz);
+        );
+   );
+ );    canvas(A,B,C,"img",       forall(intpts,trans,
+              drawimage(mi+trans,(ma.x,mi.y)+trans,"kachel");
+        );
+    );    canvas(A,B,C,"main",
+      drawimage(A,B,C,"img",alpha->alp);
+   );   if(mod(count,10)==0,
+      clrscr();
+      drawui();
+      drawimage(A+(dr,ds),B+(dr,ds),C+(dr,ds),"main",alpha->alp);
+      fillcircle(A-(0,0.5)+(B-A)*count/length(strokelist),.4,color->(1,1,1),alpha->0.3);
+      fillcircle(A-(0,0.5)+(B-A)*count/length(strokelist),.3,color->(1,1,1),alpha->0.3);          
+      fillcircle(A-(0,0.5)+(B-A)*count/length(strokelist),.2,color->(1,1,1),alpha->0.3);
+    repaint();
+  );
+);
+//fillpolygon((a,b,c,d),color->(1,1,1)); stroke=[];
+);blowup(pol,ff):=(
+mid=sum(pol)/length(pol);
+apply(pol,(#-mid)*ff+mid)
+);trafo(m,p):=(m*(p++[1])).xy;
+reconstruct():=(
+ clearimage("img");
+ clearimage("main"); mi=min([cell_1,cell_2,cell_3,cell_2+cell_3-cell_1]); 
+ ma=max([cell_1,cell_2,cell_3,cell_2+cell_3-cell_1]); 
+ celldiff=mi-cell_1;  createimage("kachel",res*(ma.x-mi.x),res*(ma.y-mi.y)); clearimage("img");forall(strokelist,strokedata,
+//err(strokedata);
+ stroke=strokedata_1;
+ sat=strokedata_2_1;
+ black=strokedata_2_2;
+ colselect=strokedata_2_3;
+ siz=strokedata_2_4;
+ blur=strokedata_2_5;
+ pen=strokedata_2_6;
+// clearimage("kachel");  forall(stroke,strorig,
+    forall(mats,m,
+        canvas(mi,(ma.x,mi.y),"kachel", 
+              pen(((m*(strorig_1++[1])).xy,(m*(strorig_2++[1])).xy),1*siz);
+        );
+   );
+ );
+);
+rep=4;
+    canvas(A,B,C,"img",
+       forall(intpts,trans,     //        clip(blowup((a+trans,b+trans,c+trans,d+trans),1.005));
+              drawimage(mi+trans,(ma.x,mi.y)+trans,"kachel");
+//greset();
+           
+        )
+    );    canvas(A,B,C,"main",      drawimage(A,B,C,"img");
+   );//fillpolygon((a,b,c,d),color->(1,1,1)); stroke=[];
+);difftocell(p):=(
+  vp=p-cell_1;
+  erg=linearsolve(bas,vp);
+  (bas*[erg_1-floor(erg_1),erg_2-floor(erg_2)]+cell_1)-p;
+);
+pen(str,t):=(diff=difftocell(str_1);
+          if(pen>0.1,           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*2*(1+pen*4),alpha->0.2*blur*(1.2-pen));
+           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*2*(1+pen*3),alpha->0.2*blur*(1.2-pen));
+           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*2*(1+pen*2),alpha->0.2*blur*(1.2-pen));
+           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*2*(1+pen*1),alpha->0.2*blur*(1.2-pen));
+           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*2*(1+pen*0),alpha->0.2*blur*(1.2-pen)),
+           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*3,alpha->1);
+        )
+);
+penprev(str,t,diff):=(
+          if(pen>0.1,           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*2*(1+pen*4),alpha->0.2*blur*(1.2-pen));
+           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*2*(1+pen*3),alpha->0.2*blur*(1.2-pen));
+           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*2*(1+pen*2),alpha->0.2*blur*(1.2-pen));
+           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*2*(1+pen*1),alpha->0.2*blur*(1.2-pen));
+           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*2*(1+pen*0),alpha->0.2*blur*(1.2-pen)),
+           draw(str_1+diff,str_2+diff,color->col(sat,black,colselect_1),size->t*3,alpha->1);
+        )
+);mouseupaction():=( canvas(A,B,C,"main",
+    drawimage(A,B,C,"img",alpha->alp);
+ );
+ clearimage("img");
+  if(!changing ,
+    strokelist=strokelist++
+             [[stroke,[sat,black,colselect,siz,blur,pen]]];
+    stroke=[];
+    st=mouse().xy;
+  );
+);
+createundo():=( clearimage("undopic");
+ canvas(A,B,C,"undopic",
+    drawimage(A,B,C,"main",alpha->alp);
+ );
+ didundo=false;
+ oldstrokelist=strokelist;
+);colortable=[
+   [[1,0,0],[22,8]],
+   [[1,.5,0],[24,8]],
+   [[1,1,0],[26,8]],
+   [[0,1,0],[28,8]],
+   [[0,1,1],[30,8]],
+   [[0,.5,1],[22,6]],
+   [[0,0,1],[24,6]],
+   [[.5,0,1],[26,6]],
+   [[1,0,1],[28,6]],
+   [[1,0,.5],[30,6]],
+   [[1,1,1],[22,4]],
+   [[1,.5,1],[24,4]],
+   [[1,1,.5],[26,4]],
+   [[1,.5,.5],[28,4]],
+   [[.2,.2,.2],[30,4]]
+];colselect=colortable_1;col(sat,black,cc):=(
+   (sat*cc+(1-sat)*(1,1,1))*black;);pentable=[
+   ["sharp",[28,-5.7],1.8],
+   ["blur",[28,-0.3],2.2],   ["white",[24,-5.7],2.5],
+   ["sat",[24,-0.3],2.5],
+   ["dark",[26.01,-5.7],2],
+   ["light",[26.01,-0.3],2],
+   ["nondense",[30,-5.7],2.2],
+   ["dense",[30,-0.3],2.2]
+];grouptable=[
+   ["p1",[22,-9]],
+   ["p2",[24,-9]],
+   ["pm",[26,-9]],
+   ["pg",[28,-9]],
+   ["pmm",[30,-9]],
+   ["pmg",[22,-11]],
+   ["pgg",[24,-11]],
+   ["cm",[26,-11]],
+   ["cmm",[28,-11]],
+   ["p4",[30,-11]],
+   ["p4m",[22,-13]],
+   ["p4g",[24,-13]],
+   ["p3",[26,-13]],
+   ["p3m1",[28,-13]],
+   ["p31m",[30,-13]],
+   ["p6",[22,-15]],
+   ["p6m",[24,-15]]
+];
+grouptablex=[
+   ["p1",[22,-6]],
+   ["p2",[24,-6]],
+   ["pm",[26,-6]],
+   ["pg",[28,-6]],
+   ["pmm",[22,-8]],
+   ["pmg",[24,-8]],
+   ["pgg",[26,-8]],
+   ["cm",[22,-10]],
+   ["cmm",[24,-10]],
+   ["p4",[22,-12]],
+   ["p4m",[24,-12]],
+   ["p4g",[26,-12]],
+   ["p3",[22,-14]],
+   ["p3m1",[24,-14]],
+   ["p31m",[26,-14]],
+   ["p6",[22,-16]],
+   ["p6m",[24,-16]]
+];function=[
+   ["geom",[26,-15],.7],
+   ["undo",[28,-15],.7],
+   ["new",[30,-15],.9]
+];showgeom=false;groupsel=grouptable_12;
+geom:=(
+  showgeom=!showgeom;
+);new:=(
+  createundo();  createimage("main",res*|A,B|,res*|A,C|);
+  drawing();
+  repaint();  strokelist=[];
+//oldstrokelist=[];
+);undoXX:=(
+  if(strokelist!=[],
+    clearimage("main");    while(((strokelist_(length(strokelist)))_1!=[])&(strokelist!=[]),
+      strokelist=apply(1..(length(strokelist)-1),strokelist_#);
+    );    if(strokelist!=[],
+      cond=((strokelist_(length(strokelist)))_1==[])&(strokelist!=[]);
+      while(,
+        strokelist=apply(1..(length(strokelist)-1),err(#);strokelist_#);
+        cond=((strokelist_(length(strokelist)))_1==[])&(strokelist!=[]);
+      );
+    );    reconstruct();
+    drawing();
+    repaint();
+    strokelist=apply(1..(length(strokelist)-1),strokelist_#);
+  );   
+);
+undo:=(
+  if(didundo,
+    undoXX,
+   
+    clearimage("main");
+    canvas(A,B,C,"main",
+      drawimage(A,B,C,"undopic",alpha->alp);
+    );
+    strokelist=oldstrokelist;     if(strokelist!=[],     cond=((strokelist_(length(strokelist)))_1==[])&(strokelist!=[]);
+      while(,
+        strokelist=apply(1..(length(strokelist)-1),err(#);strokelist_#);
+        cond=((strokelist_(length(strokelist)))_1==[])&(strokelist!=[]);
+      );
+    );    drawing();
+    repaint();
+    );
+    didundo=true;
+  );     parse(group);
+  force=true;
+   parse(fundam);
+  force=false;
+  parse(group);
+  force=true;
+   parse(fundam);
+  force=false;
+  initcell;
+strokelist=[];
+oldstrokelist=[];beginofchange():=(
+  err("BEGIN CHANGE");
+  oldcell=cell;
+  );endofchange():=(
+  err("END CHANGE");
+  calcintpts();
+  celltrafo=map(oldcell_1,oldcell_2,oldcell_3,cell_1,cell_2,cell_3);
+  scal=sqrt(|det(celltrafo/celltrafo_3_3)|);
+  strokelist=apply(strokelist,data,
+    [apply(data_1,stro,[trafo(celltrafo,stro_1),trafo(celltrafo,stro_2)]),
+     [data_2_1,data_2_2,data_2_3,data_2_4*scal,data_2_5,data_2_6]
+     ]
+  );
+//err(strokelist);
+  reconstruct();
+);
+stroke=[];st=mouse().xy;drawing=mouse().x<B.x;
+if(drawing,
+  createundo();
+);changing=(D.selected % E.selected % F.selected);if(changing,
+  beginofchange();
+);
+hits=select(1..length(colortable),entry=colortable_#;
+   |entry_2,mouse().xy|<1
+);if(length(hits)==1,colselect=(colortable_(hits_1)));
+ghits=select(1..length(grouptable),entry=grouptable_#;
+   |entry_2,mouse().xy|<1
+);if(length(ghits)==1,groupsel=(grouptable_(ghits_1));
+  group=groupsel_1;
+//OK, das ist noch bös gehackt.
+  parse(group);
+  force=true;
+   parse(fundam);
+  force=false;
+  parse(group);
+  force=true;
+   parse(fundam);
+  force=false;
+  initcell;
+  calcintpts();
+  clearimage("main");
+  reconstruct();
+  drawing();
+);
+fhits=select(1..length(function),entry=function_#;
+   |entry_2,mouse().xy|<1
+);if(length(fhits)==1,
+   parse(function_(fhits_1)_1)
+);//mouseupaction();
+apply(allpoints(),#.selected=false);
+if(changing,
+  endofchange();
+);if(drawing&!changing,
+  en=mouse().xy;
+  stroke=stroke++[[st,en]];
+  st=en;
+);
+clearimage("main");
+drawing();
+repaint();
+//err(flatten(apply(strokelist,#_1)));//err(strokelist);strokelist=[];

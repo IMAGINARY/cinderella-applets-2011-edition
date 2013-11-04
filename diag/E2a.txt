@@ -1,0 +1,10 @@
+addMode de.cinderella.modes.Move()
+addMode de.cinderella.modes.SingleAdd()
+addMode de.cinderella.modes.MultiAdd(de.cinderella.algorithms.Join)
+addMode de.cinderella.modes.DefineCompass()
+addMode de.cinderella.actions.Undo()
+addMode de.cinderella.actions.GiveHint()
+addMode de.cinderella.actions.Restart()
+file read from null/file:/home/gagern/dmweb/de/Life4Perform8.cdy
+drainQueue
+ports = [de.cinderella.ports.EuclideanPort[,0,0,1251x959,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=]]

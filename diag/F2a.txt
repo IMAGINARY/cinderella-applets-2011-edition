@@ -1,0 +1,20 @@
+addMode de.cinderella.modes.Move()
+addMode de.cinderella.modes.SingleAdd()
+addMode de.cinderella.modes.MultiAdd(de.cinderella.algorithms.Join)
+addMode de.cinderella.modes.DefineCompass()
+addMode de.cinderella.actions.Undo()
+addMode de.cinderella.actions.GiveHint()
+addMode de.cinderella.actions.Restart()
+cleaned de.cinderella.ports.EuclideanPort[,0,0,0x0,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=]
+Removing from repaint: de.cinderella.ports.EuclideanPort[,0,0,0x0,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=]
+file read from null/file:/home/gagern/dmweb/de/Farn10.cdy
+inspectableAttributes = [portsize/47, imagescalemode/164, imagealpha/165, port.background.media/312, backgroundimage/280, show.adjacencymatrix/167, precision.measure/230, precision.measure.int/233, precision.angle/231, precision.angle.int/234, anglemodulo/248, printscale/249, printscale.int/250, darkenDependent/251, mesh.rectangular/49, mesh.triangular/50, axes.show/51, snap/52, mesh.density/53, euclideanport.scale/286, euclideanport.origin.x/320, euclideanport.origin.y/321]
+calling command in Javascriptparent.alive()
+Removing from repaint: de.cinderella.ports.EuclideanPort[,0,0,1244x979,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=]
+Removing from repaint: de.cinderella.ports.EuclideanPort[,0,0,1244x979,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=]
+Removing from repaint: Dispatcher[1287431968704]
+drainQueue
+ports = [de.cinderella.ports.EuclideanPort[,0,0,1244x979,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=]]
+cleaned de.cinderella.ports.EuclideanPort[,0,0,1244x979,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=]
+Removing from repaint: de.cinderella.ports.EuclideanPort[,0,0,1244x979,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=]
+Removing from repaint: Dispatcher[1287431968704]
