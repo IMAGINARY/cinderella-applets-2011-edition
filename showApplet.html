@@ -15,13 +15,13 @@
 var t;
 function goback()
 {
-location.href='index_de.html';
+location.href='index_'+lang+'.html';
 }
 
 function alive()
 {
-// clearTimeout(t);
-// t=setTimeout("goback()",180000);
+clearTimeout(t);
+t=setTimeout("goback()",180000);
 }
 alive()
 </script>
@@ -96,8 +96,9 @@ alive()
 
 <div style="position:absolute;top:1005;left:530;">
 <script type=""text/javascript">
-       if(lang=="de")  document.write("<a href='showApplet.html?lang=en&which="+which+"'><img src='images/Flaggen/en_frame45dim.png' width=45 height=45 border=0></a>");
-       if(lang=="en")  document.write("<a href='showApplet.html?lang=de&which="+which+"'><img src='images/Flaggen/de_frame45dim.png' width=45 height=45 border=0></a>");
+       if(lang!="en")  document.write("<a href='showApplet.html?lang=en&which="+which+"'><img src='images/Flaggen/en_frame45dim.png' width=45 height=45 border=0></a> ");
+       if(lang!="de")  document.write("<a href='showApplet.html?lang=de&which="+which+"'><img src='images/Flaggen/de_frame45dim.png' width=45 height=45 border=0></a> ");
+       if(lang!="no")  document.write("<a href='showApplet.html?lang=no&which="+which+"'><img src='images/Flaggen/no_frame45dim.png' width=45 height=45 border=0></a> ");
 </script>
 </div>	
 
