@@ -1,0 +1,20 @@
+#!/bin/bash
+
+TMP_FILE=/tmp/killjava_data
+
+runs=`cat $TMP_FILE`
+if [[ $runs =~ ^-?[0-9]+$ ]];
+then
+	let runs=$runs+1
+	echo $runs
+	if [ $runs -gt 10 ];
+	then
+		runs=0 
+#		zenity --info --text "Killing Java now"
+		killall java
+	fi
+	echo $runs > $TMP_FILE
+else
+	echo 1 > $TMP_FILE
+fi
+
