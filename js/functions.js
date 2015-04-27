@@ -185,9 +185,9 @@ function titlename( name )
    if(name=="G4_tr") return "<b>Oyunlar:</b> Arabanı serbest bırak";     
  
    if(name=="H1_tr") return "<b>Simülasyonlar:</b> Yürüyen bir robot";     
-   if(name=="H2_tr") return "<b>Simülasyonlar:</b> Dengede duran fok";     
+   if(name=="H2_tr") return "<b>Simülasyonlar:</b> Dengeci fok";     
    if(name=="H3_tr") return "<b>Simülasyonlar:</b> Sürü simülasyonu";     
-   if(name=="H4_tr") return "<b>Simülasyonlar:</b> Kalıtım oyun alanı";     
+   if(name=="H4_tr") return "<b>Simülasyonlar:</b> Kalıtım oyunu";     
 
    return name;
 }
