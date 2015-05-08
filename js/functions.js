@@ -148,6 +148,47 @@ function titlename( name )
    if(name=="H3_no") return "<b>Simuleringer:</b> Simulering av svermer";     
    if(name=="H4_no") return "<b>Simuleringer:</b> Genenes lekeplass";     
 
+
+   if(name=="A1_tr") return "<b>Yansımalar:</b> Yansımaların yansımaları";     
+   if(name=="A2_tr") return "<b>Yansımalar:</b> Fiziksel yansımalar";    
+   if(name=="A3_tr") return "<b>Yansımalar:</b> Kaleydoskop (Çiçek Dürbünü)";     
+   if(name=="A4_tr") return "<b>Yansımalar:</b> Duvar kağıtları";     
+
+   if(name=="B1_tr") return "<b>Benzerlikler:</b> Döndürme simetrisi";     
+   if(name=="B2_tr") return "<b>Benzerlikler:</b> Ucuca eklenen dörtgenler";     
+   if(name=="B3_tr") return "<b>Benzerlikler:</b> Yinelemeli benzerlikler";     
+   if(name=="B4_tr") return "<b>Benzerlikler:</b> İki benzerliği yineleme";     
+ 
+   if(name=="C1_tr") return "<b>Cisimler:</b> Platonik cisimler";     
+   if(name=="C2_tr") return "<b>Cisimler:</b> Arşimet cisimleri";     
+   if(name=="C3_tr") return "<b>Cisimler:</b> İçiçe geçmiş platonik cisimler";     
+   if(name=="C4_tr") return "<b>Cisimler:</b> Biçim değiştiren cisimler";     
+ 
+   if(name=="D1_tr") return "<b>Doldurmalar:</b> Uzay dolduran çok yüzlü cisimler";     
+   if(name=="D2_tr") return "<b>Doldurmalar:</b> Sierpinski dörtyüzlüsü";     
+   if(name=="D3_tr") return "<b>Doldurmalar:</b> Kürelerle doldurma";     
+   if(name=="D4_tr") return "<b>Doldurmalar:</b> Kristaller ve örgüler";     
+ 
+   if(name=="E1_tr") return "<b>Kaos:</b> Ayna kaosu";     
+   if(name=="E2_tr") return "<b>Kaos:</b> Conway’in yaşam oyunu";     
+   if(name=="E3_tr") return "<b>Kaos:</b> Çift sarkaç";     
+   if(name=="E4_tr") return "<b>Kaos:</b> Kuvvet alanındaki gezegen";     
+ 
+   if(name=="F1_tr") return "<b>Bitkiler:</b> Kopyaların kopyaları";     
+   if(name=="F2_tr") return "<b>Bitkiler:</b> Eğrelti otu ve diğer bitkiler";     
+   if(name=="F3_tr") return "<b>Bitkiler:</b> Ayçiçeği";     
+   if(name=="F4_tr") return "<b>Bitkiler:</b> Ağaç yapıları";     
+ 
+   if(name=="G1_tr") return "<b>Oyunlar:</b> Sudoku";     
+   if(name=="G2_tr") return "<b>Oyunlar:</b> 14/15 Bulmacası";     
+   if(name=="G3_tr") return "<b>Oyunlar:</b> Solitaire";     
+   if(name=="G4_tr") return "<b>Oyunlar:</b> Arabanı serbest bırak";     
+ 
+   if(name=="H1_tr") return "<b>Simülasyonlar:</b> Yürüyen bir robot";     
+   if(name=="H2_tr") return "<b>Simülasyonlar:</b> Dengeci fok";     
+   if(name=="H3_tr") return "<b>Simülasyonlar:</b> Sürü simülasyonu";     
+   if(name=="H4_tr") return "<b>Simülasyonlar:</b> Kalıtım oyunu";     
+
    return name;
 }
 
