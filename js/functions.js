@@ -189,25 +189,25 @@ function titlename( name )
    if(name=="H3_tr") return "<b>Simülasyonlar:</b> Sürü simülasyonu";     
    if(name=="H4_tr") return "<b>Simülasyonlar:</b> Kalıtım oyunu";
    
-   if(name=="A1_he") return "<b>שתקפויות</b> שיקוף של השתקפויות";     
-   if(name=="A2_he") return "<b>Reflections:</b> השתקפויות פיזיקליותPhysical refelctions";    
-   if(name=="A3_he") return "<b>Reflections:</b> קליידוסקופיםKaleidoscopes";     
-   if(name=="A4_he") return "<b>Reflections:</b> טפטיםWallpapers";     
+   if(name=="A1_he") return "<b>שתקפויות:</b> שיקוף של השתקפויות";     
+   if(name=="A2_he") return "<b>שתקפויות:</b> השתקפויות פיזיקליות";    
+   if(name=="A3_he") return "<b>שתקפויות:</b> קליידוסקופים";     
+   if(name=="A4_he") return "<b>שתקפויות:</b> טפטים";     
 
-   if(name=="B1_he") return "<b>Similarities:</b> סימטריה סיבוביתRotational symmetry";     
-   if(name=="B2_he") return "<b>Similarities:</b> ריצוף של מרובעים";     
-   if(name=="B3_he") return "<b>Similarities:</b> חזרתיות של דמיון";     
-   if(name=="B4_he") return "<b>Similarities:</b> חזרתיות של שתי תכונות דמיון";     
+   if(name=="B1_he") return "<b>דמיון:</b> סימטריה סיבובית";     
+   if(name=="B2_he") return "<b>דמיון:</b> ריצוף של מרובעים";     
+   if(name=="B3_he") return "<b>דמיון:</b> חזרתיות של דמיון";     
+   if(name=="B4_he") return "<b>דמיון:</b> חזרתיות של שתי תכונות דמיון";     
  
    if(name=="C1_he") return "<b>גופים:</b> גופים אפלטוניים";     
-   if(name=="C2_he") return "<bגופים</b> גופים ארכימדיים";     
-   if(name=="C3_he") return "<b>Solids:</b> גופים אפלטונים כלואים";     
-   if(name=="C4_he") return "<b>Solids:</b> גופים משתנים";     
+   if(name=="C2_he") return "<b>גופים:</b> גופים ארכימדיים";     
+   if(name=="C3_he") return "<b>גופים:</b> גופים אפלטונים כלואים";     
+   if(name=="C4_he") return "<b>גופים:</b> גופים משתנים";     
  
    if(name=="D1_he") return "<b>למלא מרחב:</b> פאונים הממלאים מרחב";     
-   if(name=="D2_he") return "<b>Packings:</b> ארבעון סיירפינסקי";     
-   if(name=="D3_he") return "<b>Packings:</b> מערום כדורים";     
-   if(name=="D4_he") return "<b>Packings:</b> גבישים ושריגים";     
+   if(name=="D2_he") return "<b>למלא מרחב:</b> ארבעון סיירפינסקי";     
+   if(name=="D3_he") return "<b>למלא מרחב:</b> מערום כדורים";     
+   if(name=="D4_he") return "<b>למלא מרחב:</b> גבישים ושריגים";     
  
    if(name=="E1_he") return "<b>כאוס:</b> כאוס מראות";     
    if(name=="E2_he") return "<b>כאוס:</b> משחק החיים של קונוואי";     
