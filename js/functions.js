@@ -188,6 +188,7 @@ function titlename( name )
    if(name=="H2_tr") return "<b>Simülasyonlar:</b> Dengeci fok";     
    if(name=="H3_tr") return "<b>Simülasyonlar:</b> Sürü simülasyonu";     
    if(name=="H4_tr") return "<b>Simülasyonlar:</b> Kalıtım oyunu";
+
    
    if(name=="A1_he") return "<b>שתקפויות:</b> שיקוף של השתקפויות";     
    if(name=="A2_he") return "<b>שתקפויות:</b> השתקפויות פיזיקליות";    
