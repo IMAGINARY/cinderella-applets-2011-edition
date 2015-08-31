@@ -9,6 +9,10 @@ body {
   color: #dddddd;
 }
 
+body.rtl {
+  text-align: right;
+}
+
 p {margin: 40px;
    font-size: 20px;
 }

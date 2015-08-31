@@ -187,7 +187,90 @@ function titlename( name )
    if(name=="H1_tr") return "<b>Simülasyonlar:</b> Yürüyen bir robot";     
    if(name=="H2_tr") return "<b>Simülasyonlar:</b> Dengeci fok";     
    if(name=="H3_tr") return "<b>Simülasyonlar:</b> Sürü simülasyonu";     
-   if(name=="H4_tr") return "<b>Simülasyonlar:</b> Kalıtım oyunu";     
+   if(name=="H4_tr") return "<b>Simülasyonlar:</b> Kalıtım oyunu";
+
+   
+   if(name=="A1_he") return "<b>שתקפויות:</b> שיקוף של השתקפויות";     
+   if(name=="A2_he") return "<b>שתקפויות:</b> השתקפויות פיזיקליות";    
+   if(name=="A3_he") return "<b>שתקפויות:</b> קליידוסקופים";     
+   if(name=="A4_he") return "<b>שתקפויות:</b> טפטים";     
+
+   if(name=="B1_he") return "<b>דמיון:</b> סימטריה סיבובית";     
+   if(name=="B2_he") return "<b>דמיון:</b> ריצוף של מרובעים";     
+   if(name=="B3_he") return "<b>דמיון:</b> חזרתיות של דמיון";     
+   if(name=="B4_he") return "<b>דמיון:</b> חזרתיות של שתי תכונות דמיון";     
+ 
+   if(name=="C1_he") return "<b>גופים:</b> גופים אפלטוניים";     
+   if(name=="C2_he") return "<b>גופים:</b> גופים ארכימדיים";     
+   if(name=="C3_he") return "<b>גופים:</b> גופים אפלטונים כלואים";     
+   if(name=="C4_he") return "<b>גופים:</b> גופים משתנים";     
+ 
+   if(name=="D1_he") return "<b>למלא מרחב:</b> פאונים הממלאים מרחב";     
+   if(name=="D2_he") return "<b>למלא מרחב:</b> ארבעון סיירפינסקי";     
+   if(name=="D3_he") return "<b>למלא מרחב:</b> מערום כדורים";     
+   if(name=="D4_he") return "<b>למלא מרחב:</b> גבישים ושריגים";     
+ 
+   if(name=="E1_he") return "<b>כאוס:</b> כאוס מראות";     
+   if(name=="E2_he") return "<b>כאוס:</b> משחק החיים של קונוואי";     
+   if(name=="E3_he") return "<b>כאוס:</b> מטוטלת כפולה";     
+   if(name=="E4_he") return "<b>כאוס:</b> פלנטה בשדה כבידה";     
+ 
+   if(name=="F1_he") return "<b>צמחים:</b> העתקים של העתקים";     
+   if(name=="F2_he") return "<b>צמחים:</b> שרכים ועוד צמחים";     
+   if(name=="F3_he") return "<b>צמחים:</b> חמניה";     
+   if(name=="F4_he") return "<b>צמחים:</b> מבני עצים";     
+ 
+   if(name=="G1_he") return "<b>משחקים:</b> סודוקו";     
+   if(name=="G2_he") return "<b>משחקים:</b> חידת 14/15";     
+   if(name=="G3_he") return "<b>משחקים:</b> סוליטר";     
+   if(name=="G4_he") return "<b>משחקים:</b> שעת שיא";     
+ 
+   if(name=="H1_he") return "<b>סימולציות:</b> רובוט מהלך";     
+   if(name=="H2_he") return "<b>סימולציות:</b> כלב ים מאזן";     
+   if(name=="H3_he") return "<b>סימולציות:</b> הדמיית נחיל";     
+   if(name=="H4_he") return "<b>סימולציות:</b> משחק תורשה";          
+
+
+   if(name=="A1_ar") return "<b>انعكاسات:</b> انعكاس الانعكاسات";     
+   if(name=="A2_ar") return "<b>انعكاسات:</b> الانعكاسات الفيزيائية";    
+   if(name=="A3_ar") return "<b>انعكاسات:</b> المشكال";
+   if(name=="A4_ar") return "<b>انعكاسات:</b> خلفيات";     
+
+   if(name=="B1_ar") return "<b> متشابهات:</b> التناظر الدوراني";
+   if(name=="B2_ar") return "<b> متشابهات:</b> رباعيات متجاورة";
+   if(name=="B3_ar") return "<b> متشابهات:</b> المتشابهات المكررة"
+   if(name=="B4_ar") return "<b>متشابهات:</b> تكرار متشابهين";
+
+   if(name=="C1_ar") return "<b>المواد الصلبة:</b> المواد الصلبة الأفلاطونية";
+   if(name=="C2_ar") return "<b>المواد الصلبة:</b> المواد الصلبة الأرخميديسية";
+   if(name=="C3_ar") return "<b>المواد الصلبة:</b> المواد الصلبة الأفلاطونية التعشيش";
+   if(name=="C4_ar") return "<b>المواد الصلبة:</b> المواد الصلبة المتغيرة";
+ 
+   if(name=="D1_ar") return "<b>الأغلفة:</b> ملء الفراغ في المجسمات كثيرة السطوح";
+   if(name=="D2_ar") return "<b>الأغلفة:</b> رباعي وجوه Sierpinski ";
+   if(name=="D3_ar") return "<b>الأغلفة:</b> الأغلفة الكروية";
+   if(name=="D4_ar") return "<b>الأغلفة:</b> البلورات و الشبكات";
+ 
+   if(name=="E1_ar") return "<b>الفوضى:</b> فوضى المرايا";
+   if(name=="E2_ar") return "<b>الفوضى:</b> Conway's game of life ";
+   if(name=="E3_ar") return "<b>الفوضى:</b> الهزاز المضاعف";
+   if(name=="E4_ar") return "<b>الفوضى:</b> كوكب في حقل قوة";
+ 
+   if(name=="F1_ar") return "<b>النباتات:</b> نسخ النسخ";
+   if(name=="F2_ar") return "<b>النباتات:</b> السرخس و نباتات أخرى";
+   if(name=="F3_ar") return "<b>النباتات:</b> عباد الشمس";
+   if(name=="F4_ar") return "<b>النباتات:</b> بنية الأشجار";
+ 
+   if(name=="G1_ar") return "<b>ألعاب:</b> Sudoku ";
+   if(name=="G2_ar") return "<b>ألعاب:</b> لغز 14/15 ";
+   if(name=="G3_ar") return "<b>ألعاب:</b> سوليتير ";
+   if(name=="G4_ar") return "<b>ألعاب:</b> أطلق سيارتك ";
+ 
+   if(name=="H1_ar") return "<b>محاكاة:</b> رجل آلي يمشي ";
+   if(name=="H2_ar") return "<b>محاكاة:</b> موازنة الختم";
+   if(name=="H3_ar") return "<b>محاكاة:</b> محاكاة منتشرة";
+   if(name=="H4_ar") return "<b>محاكاة:</b> ملعب الإرث";
+
 
    return name;
 }
