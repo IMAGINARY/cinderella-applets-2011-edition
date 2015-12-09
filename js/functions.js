@@ -312,6 +312,46 @@ function titlename( name )
    if(name=="H3_nl") return "<b>Simulatie:</b> Zwermen";
    if(name=="H4_nl") return "<b>Simulatie:</b> Erfelijkheidsspel";
 
+   if(name=="A1_zh-t") return "<b>反射:</b> 多重反射";
+   if(name=="A2_zh-t") return "<b>反射:</b> 物理上的反射";
+   if(name=="A3_zh-t") return "<b>反射:</b> 萬花筒";
+   if(name=="A4_zh-t") return "<b>反射:</b> 壁紙";
+
+   if(name=="B1_zh-t") return "<b>相似形:</b> 旋轉對稱";
+   if(name=="B2_zh-t") return "<b>相似形:</b> 四邊形的相似形並列Juxtapositions of four-gons";
+   if(name=="B3_zh-t") return "<b>相似形:</b> 遞迴相似";
+   if(name=="B4_zh-t") return "<b>相似形:</b> 遞迴兩種相似";
+
+   if(name=="C1_zh-t") return "<b>多面體:</b> 柏拉圖多面體";
+   if(name=="C2_zh-t") return "<b>多面體:</b> 阿基米德多面體";
+   if(name=="C3_zh-t") return "<b>多面體:</b> 柏拉圖多面體的相嵌";
+   if(name=="C4_zh-t") return "<b>多面體:</b> 連續變化的多面體";
+
+   if(name=="D1_zh-t") return "<b>空間堆疊:</b> 空間填充多面體";
+   if(name=="D2_zh-t") return "<b>空間堆疊:</b> 謝爾賓斯基四面體";
+   if(name=="D3_zh-t") return "<b>空間堆疊:</b> 圓球堆疊";
+   if(name=="D4_zh-t") return "<b>空間堆疊:</b> 結晶與晶格";
+
+   if(name=="E1_zh-t") return "<b>混沌:</b> 鏡面反射混沌";
+   if(name=="E2_zh-t") return "<b>混沌:</b> 康威生命遊戲";
+   if(name=="E3_zh-t") return "<b>混沌:</b> 雙擺系統";
+   if(name=="E4_zh-t") return "<b>混沌:</b> 重力場中的行星";
+
+   if(name=="F1_zh-t") return "<b>植物:</b> 多重複製操作";
+   if(name=="F2_zh-t") return "<b>植物:</b> 蕨類與各種職務";
+   if(name=="F3_zh-t") return "<b>植物:</b> 向日葵";
+   if(name=="F4_zh-t") return "<b>植物:</b> 樹狀結構";
+
+   if(name=="G1_zh-t") return "<b>遊戲:</b> 數獨";
+   if(name=="G2_zh-t") return "<b>遊戲:</b> 數字推盤";
+   if(name=="G3_zh-t") return "<b>遊戲:</b> 孔明棋";
+   if(name=="G4_zh-t") return "<b>遊戲:</b> 解救你的車";
+
+   if(name=="H1_zh-t") return "<b>模擬:</b> 走路的機器人";
+   if(name=="H2_zh-t") return "<b>模擬:</b> 平衡球的海報";
+   if(name=="H3_zh-t") return "<b>模擬:</b> 群體模擬器";
+   if(name=="H4_zh-t") return "<b>模擬:</b> 繼承沙盒";
+
 
    return name;
 }
