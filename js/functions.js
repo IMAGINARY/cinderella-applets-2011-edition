@@ -318,7 +318,7 @@ function titlename( name )
    if(name=="A4_zh-t") return "<b>反射:</b> 壁紙";
 
    if(name=="B1_zh-t") return "<b>相似形:</b> 旋轉對稱";
-   if(name=="B2_zh-t") return "<b>相似形:</b> 四邊形的相似形並列Juxtapositions of four-gons";
+   if(name=="B2_zh-t") return "<b>相似形:</b> 四邊形的相似形並列";
    if(name=="B3_zh-t") return "<b>相似形:</b> 遞迴相似";
    if(name=="B4_zh-t") return "<b>相似形:</b> 遞迴兩種相似";
 
