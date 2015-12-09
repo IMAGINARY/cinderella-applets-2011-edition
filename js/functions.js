@@ -352,7 +352,6 @@ function titlename( name )
    if(name=="H3_zh-t") return "<b>模擬:</b> 群體模擬器";
    if(name=="H4_zh-t") return "<b>模擬:</b> 繼承沙盒";
 
-
    return name;
 }
 
