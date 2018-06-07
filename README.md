@@ -5,12 +5,11 @@ The 2011 edition of Cinderella applets originally written by Jürgen Richter-Geb
 
 Test it using http://rawgithub.com/IMAGINARY/cinderella-applets-2011-edition/master/index_en.html
 
-Important notice: unfortunately the Cinderella applets do not work anymore "out of the box" since they are implemented in Java for the web (and this makes problems due to Javas latest security updates). There are two alternative ways, though:
+Important notice: unfortunately the Cinderella applets do not work anymore "out of the box" (because Java Applets are no longer supported and the certificates they were signed with are now expired). There are two alternative ways, though:
 
 1) Just install Cinderella - the main dynamic geometry software  (it is free, see cinderella.de) and open the .cdy source files (so you can play with the games inside Cinderella). You find all Cinderella applet (cdy files) in the /en directory of the github repository.
 
-2) Use our ready-made "discovery box", which is a ISO image that comes along with Ubuntu operating system and the browser/Java ready for Cinderella.
-You can find it at: https://www.dropbox.com/s/rkdne93k9l473t1/Entdeckerbox-2013.iso?dl=0 (1.1 GB). You can then either burn it on DVD and boot from it, or use a Virtual Machine to boot from it (such as Virtual Box).
+2) Use the Javascript version of the applets, programmed using CindyJS: https://imaginary.org/program/math-to-touch.
 
 Contributions
 -------------
